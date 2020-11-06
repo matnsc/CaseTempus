@@ -1,4 +1,34 @@
-﻿@{
-    ViewData["Title"] = "Administração de Clientes";
-}
+﻿<h4>Página Inicial</h4>
 
+<style>
+    .row {
+        margin-bottom: 15px;
+    }
+</style>
+
+<div class="row">
+    <div class="col col-md-12">
+        <a asp-controller="Home" asp-action="Cadastrar" class="btn btn-primary"><i class="fas fa-user"></i> Cadastrar</a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col col-md-12">
+        <table class="table">
+            <thead>
+                <th style="width: 42px"></th>
+                <th style="width: 42px"></th>
+                <th style="width: 42px"></th>
+                <th>Nome</th>
+                <th>Renda</th>
+            </thead>
+            <tbody>
+                <td title="Ver mais"><i class="fas fa-plus-circle text-primary"></i></td>
+                <td title="Editar"><i class="fas fa-edit text-warning"></i></td>
+                <td title="Excluir"><i class="fas fa-trash-alt text-danger"></i></td>
+                <td>TESTE</td>
+                <td>TESTE</td>
+            </tbody>
+        </table>
+    </div>
+</div>

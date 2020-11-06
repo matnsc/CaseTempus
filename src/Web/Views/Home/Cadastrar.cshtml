@@ -1,0 +1,60 @@
+@model CaseTempus.Models.Cliente
+
+@{
+    string sucesso = Convert.ToString(ViewData["Sucesso"]);
+    string mensagem = Convert.ToString(ViewData["Mensagem"]);
+}
+
+<script>
+    
+</script>
+
+<h4>Cadastrar</h4>
+
+<div class="row">
+    <div class="col col-md-12">
+        <a asp-controller="Home" asp-action="Index" class="btn btn-danger"><i class="fas fa-arrow-circle-left"></i> Voltar</a>
+    </div>
+</div>
+
+<div class="row justify-content-md-center">
+    <div class="card">
+        <div class="card-body">
+            <form asp-controller="Home" asp-action="Cadastrar" method="POST">
+                <div class="form-group">
+                    <label asp-for="Nome"></label>
+                    <input asp-for="Nome" class="form-control" value='@(sucesso != "N" ? "" : Model.Nome)' maxlength="150" size="50" required/>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CPF"></label>
+                    <input asp-for="CPF" class="form-control cpf" value='@(sucesso != "N" ? "" : Model.CPF)' minlength="11" maxlength="11" required/>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DataNascimento"></label>
+                    <input asp-for="DataNascimento" type="text" value='@(sucesso != "N" ? "" : Model.DataNascimento.ToString("dd/MM/yyyy"))' class="form-control data" required/>
+                </div>
+                <div class="form-group">
+                    <label asp-for="RendaFamiliar"></label>
+                    <input asp-for="RendaFamiliar" type='text' value='@(sucesso != "N" ? "" : Model.RendaFamiliar.ToString("0.00"))' class="form-control decimal"/>
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-success" value="Cadastrar"/>
+                </div>
+            </form>
+        </div>
+    </div>    
+</div>
+
+<div class="row">
+    <div class="col col-md-12">
+        @if (sucesso == "S")
+        {
+            <div class="alert alert-success" role="alert">Cadastro efetuado com sucesso!</div>
+        }
+
+        @if (sucesso == "N")
+        {
+            <div class="alert alert-danger" role="alert">Erro ao efetuar cadastro: @mensagem</div>
+        }
+    </div>
+</div>

@@ -23,6 +23,42 @@ namespace CaseTempus.Controllers
             return View();
         }
 
+        public IActionResult Cadastrar()
+        {
+            return View(new Cliente());
+        }
+
+        [HttpPost]
+        public IActionResult Cadastrar(Cliente obj)
+        {
+            if (!obj.ValidarCPF())
+            {
+                ViewData["Sucesso"] = "N";
+                ViewData["Mensagem"] = "CPF inválido!";
+                return View(obj);
+            }
+
+            if (!obj.ValidarDataNascimento())
+            {
+                ViewData["Sucesso"] = "N";
+                ViewData["Mensagem"] = "Data de nascimento deve ser menor do que a data atual!";
+                return View(obj);
+            }
+
+            if (!obj.ValidarRendaFamiliar())
+            {
+                ViewData["Sucesso"] = "N";
+                ViewData["Mensagem"] = "Renda familiar não pode ser menor que zero!";
+                return View(obj);
+            }
+
+            ViewData["Sucesso"] = "S";
+
+            // to do - persistência
+
+            return View(obj);
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

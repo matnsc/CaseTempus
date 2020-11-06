@@ -34,3 +34,5 @@
 /home/matt/Documents/CaseTempus/src/Web/obj/Debug/netcoreapp3.1/CaseTempus.pdb
 /home/matt/Documents/CaseTempus/src/Web/obj/Debug/netcoreapp3.1/CaseTempus.genruntimeconfig.cache
 /home/matt/Documents/CaseTempus/src/Web/obj/Debug/netcoreapp3.1/CaseTempus.csproj.CopyComplete
+/home/matt/Documents/CaseTempus/src/Web/obj/Debug/netcoreapp3.1/Razor/Views/Home/Cadastrar.cshtml.g.cs
+/home/matt/Documents/CaseTempus/src/Web/bin/Debug/netcoreapp3.1/Cpf.dll

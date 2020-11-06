@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "5wZ9G/mM6+8eJMicAE/xUq8bp+5fHnIIM/ZNprb95ziImtcnU/YBsM+1/PMJSUAPJNcFcW9OzaQ7sk95dPRqPQ==",
+  "dgSpecHash": "Li0nCvXJ28c3tv0v7NtWfE077GXX/d9lX8qxa9BYJil1Mg7/Y2QBM+hTTKqRgLKRq582TRFAVluOO+mijolIaQ==",
   "success": true,
   "projectFilePath": "/home/matt/Documents/CaseTempus/src/Web/CaseTempus.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/home/matt/.nuget/packages/cpf/2.1.0/cpf.2.1.0.nupkg.sha512"
+  ],
   "logs": []
 }

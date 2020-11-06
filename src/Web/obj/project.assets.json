@@ -1,11 +1,38 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {
+      "Cpf/2.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/Cpf.dll": {}
+        },
+        "runtime": {
+          "lib/Cpf.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Cpf/2.1.0": {
+      "sha512": "pj7tW8tNCEYXHqBKbDXR0MPwIeB3TrF0PWX7p2o9RRugNMeP7ZzcX0LO9BmuWNS5sSjN5dK6NJDiL8wnRAZ5Iw==",
+      "type": "package",
+      "path": "cpf/2.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "cpf.2.1.0.nupkg.sha512",
+        "cpf.nuspec",
+        "lib/Cpf.dll",
+        "lib/Cpf.pdb",
+        "lib/Cpf.xml"
+      ]
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": []
+    ".NETCoreApp,Version=v3.1": [
+      "Cpf >= 2.1.0"
+    ]
   },
   "packageFolders": {
     "/home/matt/.nuget/packages/": {}
@@ -41,6 +68,15 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "dependencies": {
+          "Cpf": {
+            "target": "Package",
+            "version": "[2.1.0, )",
+            "noWarn": [
+              "NU1701"
+            ]
+          }
+        },
         "imports": [
           "net461",
           "net462",

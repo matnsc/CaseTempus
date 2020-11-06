@@ -35,6 +35,15 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "Cpf": {
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "noWarn": [
+                "NU1701"
+              ]
+            }
+          },
           "imports": [
             "net461",
             "net462",
