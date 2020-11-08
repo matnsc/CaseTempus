@@ -14425,6 +14425,11 @@
       "FilePath": "/home/matt/Documents/CaseTempus/src/Web/Views/_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/matt/Documents/CaseTempus/src/Web/Views/Home/Detalhes.cshtml",
+      "TargetPath": "Views\\Home\\Detalhes.cshtml",
+      "FileKind": "mvc"
     }
   ],
   "SerializationFormat": "0.2"

@@ -6,21 +6,37 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using CaseTempus.Models;
+using CaseTempus.Repository;
 
 namespace CaseTempus.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<Cliente> _logger;
+        private readonly ClienteContext _context;
+        private readonly ClienteRepository _repository;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<Cliente> logger, ClienteContext context)
         {
             _logger = logger;
+            _context = context;
+            _repository = new ClienteRepository(_context, _logger);
         }
 
         public IActionResult Index()
         {
-            return View();
+            Cliente mv = new Cliente();
+
+            mv.Clientes = _repository.Listar();
+
+            return View(mv);
+        }
+
+        public IActionResult Detalhes(Guid id)
+        {
+            Cliente mv = _repository.Buscar(id);
+
+            return View(mv);
         }
 
         public IActionResult Cadastrar()
@@ -52,9 +68,16 @@ namespace CaseTempus.Controllers
                 return View(obj);
             }
 
-            ViewData["Sucesso"] = "S";
+            obj.DataCadastro = DateTime.Now;
 
-            // to do - persistência
+            if (!_repository.Cadastrar(obj))
+            {
+                ViewData["Sucesso"] = "N";
+                ViewData["Mensagem"] = "Não foi possível cadastrar cliente!";
+                return View(obj);
+            }
+
+            ViewData["Sucesso"] = "S";
 
             return View(obj);
         }

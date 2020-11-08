@@ -78,10 +78,19 @@ body {
   background: linear-gradient(to right, #241593 0%, #e7077d 100%);
 }
 
-.nav-link{
+.nav-link {
   margin-left: 20px;
 }
 
-.pb-3{
+.pb-3 {
   padding-top: 20px;
+}
+
+.custom-badge {
+  display: inline-block;
+  padding: 2px 5px;
+  border-radius: 5px;
+  color: white;
+  text-align: center;
+  font-weight: bold;
 }

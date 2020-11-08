@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations.Schema;
 using CpfLibrary;
 
 namespace CaseTempus.Models
@@ -12,6 +14,7 @@ namespace CaseTempus.Models
 
         public string CPF { get; set; }
 
+        [DisplayName("Data de Cadastro")]
         public DateTime DataCadastro { get; set; }
 
         [DisplayName("Data de Nascimento")]
@@ -19,6 +22,9 @@ namespace CaseTempus.Models
 
         [DisplayName("Renda Familiar")]
         public decimal RendaFamiliar { get; set; }
+
+        [NotMapped]
+        public List<Cliente> Clientes { get; set; }
 
         public bool ValidarCPF()
         {

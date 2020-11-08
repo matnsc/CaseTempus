@@ -1,4 +1,6 @@
-﻿<h4>Página Inicial</h4>
+﻿@model CaseTempus.Models.Cliente
+
+<h4>Página Inicial</h4>
 
 <style>
     .row {
@@ -23,11 +25,16 @@
                 <th>Renda</th>
             </thead>
             <tbody>
-                <td title="Ver mais"><i class="fas fa-plus-circle text-primary"></i></td>
-                <td title="Editar"><i class="fas fa-edit text-warning"></i></td>
-                <td title="Excluir"><i class="fas fa-trash-alt text-danger"></i></td>
-                <td>TESTE</td>
-                <td>TESTE</td>
+                @foreach (var item in Model.Clientes)
+                {
+                    <tr>
+                        <td title="Ver mais"><a asp-controller="Home" asp-action="Detalhes" asp-route-id="@(item.Id)"><i class="fas fa-plus-circle text-primary"></i></a></td>
+                        <td title="Editar"><a asp-controller="Home" asp-action="Editar" asp-route-id="@(item.Id)"><i class="fas fa-edit text-warning"></i></a></td>
+                        <td title="Excluir"><a asp-controller="Home" asp-action="Excluir" asp-route-id="@(item.Id)"><i class="fas fa-trash-alt text-danger"></i></a></td>
+                        <td>@item.Nome</td>
+                        <td><div class='custom-badge @(item.RendaFamiliar <= 980 ? "bg-danger" : item.RendaFamiliar > 2500 ? "bg-success" : "bg-warning")'>R$ @item.RendaFamiliar.ToString("0.00").Split(',')[0]</div></td>
+                    </tr>
+                }
             </tbody>
         </table>
     </div>
