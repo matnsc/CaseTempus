@@ -1,0 +1,45 @@
+@model CaseTempus.Models.Cliente
+
+@{
+    string sucesso = Convert.ToString(ViewData["Sucesso"]);
+    string mensagem = Convert.ToString(ViewData["Mensagem"]);
+}
+
+<h4>Exclusão</h4>
+
+<div class="row">
+    <div class="col col-md-12">
+        <a asp-controller="Home" asp-action="Index" class="btn btn-danger"><i class="fas fa-arrow-circle-left"></i> Voltar</a>
+    </div>
+</div>
+
+@if (String.IsNullOrEmpty(sucesso))
+{
+    <div class="row justify-content-md-center">
+        <div class="card">
+            <form asp-controller="Home" asp-action="Excluir" method="POST">
+                <input asp-for="Id" type="hidden"/>
+                <div class="card-body">
+                    <p>Você tem certeza que deseja excluir o cadastro "@(Model.Nome)"?</p>
+                </div>
+                <div class="card-footer">
+                    <input type="submit" class="btn btn-danger" value="Excluir"/>
+                </div>
+            </form>
+        </div>    
+    </div>
+}
+
+<div class="row">
+    <div class="col col-md-12">
+        @if (sucesso == "S")
+        {
+            <div class="alert alert-success" role="alert">Exclusão realizada com sucesso!</div>
+        }
+
+        @if (sucesso == "N")
+        {
+            <div class="alert alert-danger" role="alert">Erro ao excluir cadastro: @mensagem</div>
+        }
+    </div>
+</div>

@@ -1,5 +1,9 @@
 ﻿@model CaseTempus.Models.Cliente
 
+@{
+    string pesquisa = Convert.ToString(ViewData["Pesquisa"]);
+}
+
 <h4>Página Inicial</h4>
 
 <style>
@@ -9,8 +13,18 @@
 </style>
 
 <div class="row">
-    <div class="col col-md-12">
+    <div class="col col-md-3">
         <a asp-controller="Home" asp-action="Cadastrar" class="btn btn-primary"><i class="fas fa-user"></i> Cadastrar</a>
+    </div>
+    <div class="col col-md-9 justify-content-md-end" style="display: flex">
+        <form asp-controller="Home" asp-action="Index" method="GET">
+            <div class="input-group">
+                <input type="text" name="pesquisa" id="pesquisa" class="form-control" value="@pesquisa"/>
+                <div class="input-group-append">
+                    <button type="submit" class="btn btn btn-primary"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </form>
     </div>
 </div>
 

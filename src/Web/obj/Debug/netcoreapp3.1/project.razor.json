@@ -14417,6 +14417,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/matt/Documents/CaseTempus/src/Web/Views/Home/Editar.cshtml",
+      "TargetPath": "Views\\Home\\Editar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/matt/Documents/CaseTempus/src/Web/Views/Shared/_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"
@@ -14429,6 +14434,11 @@
     {
       "FilePath": "/home/matt/Documents/CaseTempus/src/Web/Views/Home/Detalhes.cshtml",
       "TargetPath": "Views\\Home\\Detalhes.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/matt/Documents/CaseTempus/src/Web/Views/Home/Excluir.cshtml",
+      "TargetPath": "Views\\Home\\Excluir.cshtml",
       "FileKind": "mvc"
     }
   ],
