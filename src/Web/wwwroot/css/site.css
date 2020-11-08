@@ -94,3 +94,10 @@ body {
   text-align: center;
   font-weight: bold;
 }
+
+.relatorio {
+  text-align: center;
+  font-weight: bold;
+  min-width: 180px;
+  margin-bottom: 25px;
+}

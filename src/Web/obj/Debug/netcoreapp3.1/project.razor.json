@@ -14412,6 +14412,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/matt/Documents/CaseTempus/src/Web/Views/Home/Relatorio.cshtml",
+      "TargetPath": "Views\\Home\\Relatorio.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/matt/Documents/CaseTempus/src/Web/Views/Shared/_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"

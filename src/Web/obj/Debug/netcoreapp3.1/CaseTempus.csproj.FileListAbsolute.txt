@@ -80,3 +80,4 @@
 /home/matt/Documents/CaseTempus/src/Web/obj/Debug/netcoreapp3.1/Razor/Views/Home/Detalhes.cshtml.g.cs
 /home/matt/Documents/CaseTempus/src/Web/obj/Debug/netcoreapp3.1/Razor/Views/Home/Excluir.cshtml.g.cs
 /home/matt/Documents/CaseTempus/src/Web/obj/Debug/netcoreapp3.1/Razor/Views/Home/Editar.cshtml.g.cs
+/home/matt/Documents/CaseTempus/src/Web/obj/Debug/netcoreapp3.1/Razor/Views/Home/Relatorio.cshtml.g.cs

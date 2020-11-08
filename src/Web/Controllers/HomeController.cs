@@ -46,6 +46,26 @@ namespace CaseTempus.Controllers
             return View(mv);
         }
 
+        public IActionResult Relatorio()
+        {
+            Relatorio mv = new Relatorio();
+
+            List<Cliente> dados = _repository.Listar();
+
+            if (dados.Count > 0)
+            {
+                decimal media = dados.Sum(x => x.RendaFamiliar) / dados.Count;
+                double daysInYear = 365.2422;
+
+                mv.RendaMaiorMedia = dados.Where(x => x.RendaFamiliar > media && (DateTime.Now.Subtract(x.DataNascimento).Days / daysInYear) >= 18).Count();
+                mv.ClasseA = dados.Where(x => x.RendaFamiliar > 2500).Count();
+                mv.ClasseB = dados.Where(x => x.RendaFamiliar > 980 && x.RendaFamiliar <= 2500).Count();
+                mv.ClasseC = dados.Where(x => x.RendaFamiliar <= 980).Count();
+            }
+
+            return View(mv);
+        }
+
         public IActionResult Detalhes(Guid id)
         {
             Cliente mv = _repository.Buscar(id);

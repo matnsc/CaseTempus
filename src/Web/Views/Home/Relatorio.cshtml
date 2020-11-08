@@ -1,0 +1,51 @@
+@model CaseTempus.Models.Relatorio
+
+<h4>Relatórios</h4>
+
+<h4><small class="text-muted">Quantidade de clientes</small></h4>
+
+<div class="row">
+    <div class="col col-md-3">
+        <div class="card relatorio">
+            <div class="card-header bg-primary text-white">
+                Renda Maior que Média
+            </div>
+            <div class="card-body">
+                @Model.RendaMaiorMedia
+            </div>
+        </div>
+    </div>
+    
+    <div class="col col-md-3">
+        <div class="card relatorio">
+            <div class="card-header bg-success text-white">
+                Classe A
+            </div>
+            <div class="card-body">
+                @Model.ClasseA
+            </div>
+        </div>
+    </div>
+    
+    <div class="col col-md-3">
+        <div class="card relatorio">
+            <div class="card-header bg-warning text-white">
+                Classe B
+            </div>
+            <div class="card-body">
+                @Model.ClasseB
+            </div>
+        </div>
+    </div>
+    
+    <div class="col col-md-3">
+        <div class="card relatorio">
+            <div class="card-header bg-danger text-white">
+                Classe C
+            </div>
+            <div class="card-body">
+                @Model.ClasseC
+            </div>
+        </div>
+    </div>
+</div>
